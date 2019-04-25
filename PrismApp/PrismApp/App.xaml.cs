@@ -21,9 +21,17 @@ namespace PrismApp
 
         protected override async void OnInitialized()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+                await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            }
+            catch (System.Exception ex)
+            {
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+                ex.ToString();
+            }
+          
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

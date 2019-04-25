@@ -11,7 +11,15 @@ namespace PrismApp.Views
     {
         public MainPage()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+           
         }
     }
 }
