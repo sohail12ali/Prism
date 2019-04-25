@@ -116,6 +116,7 @@ namespace PrismApp.ViewModels
             NavigationService = navigationService;
             ea = eventAggregator;
             dialogService = pageDialogService;
+            NavigateCommand = new DelegateCommand<string>(async (string page) => await NavigateTo(page));
 
         }
         public ViewModelBase(INavigationService navigationService, IEventAggregator eventAggregator, IToastNotifier toastNotifier, IRestClient client, IPageDialogService pageDialogService)
